@@ -690,6 +690,7 @@ struct Pcsx2Config
 		float UpscaleMultiplier = 1.0f;
 
 		AccBlendLevel AccurateBlendingUnit = AccBlendLevel::Basic;
+		GSHWMipmapMode HWMipmapMode = GSHWMipmapMode::Disabled;
 		BiFiltering TextureFiltering = BiFiltering::PS2;
 		TexturePreloadingLevel TexturePreloading = TexturePreloadingLevel::Full;
 		GSDumpCompressionMethod GSDumpCompression = GSDumpCompressionMethod::Zstandard;
