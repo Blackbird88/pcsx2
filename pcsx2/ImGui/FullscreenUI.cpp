@@ -3660,8 +3660,8 @@ void FullscreenUI::DrawGraphicsSettingsPage(SettingsInterface* bsi, bool show_ad
 		DrawStringListSetting(bsi, FSUI_CSTR("Internal Resolution"),
 			FSUI_CSTR("Multiplies the render resolution by the specified factor (upscaling)."), "EmuCore/GS", "upscale_multiplier",
 			"1.000000", s_resolution_options, s_resolution_values, std::size(s_resolution_options), true);
-		DrawIntListSetting(
-			bsi, FSUI_CSTR("Mipmapping"), FSUI_CSTR("Enables emulation of the GS's texture mipmapping."), "EmuCore/GS", "hw_mipmap_mode",
+		DrawIntListSetting(bsi, FSUI_CSTR("Mipmapping"),
+			FSUI_CSTR("Enables emulation of the GS's texture mipmapping."), "EmuCore/GS", "hw_mipmap_mode",
 			static_cast<int>(GSHWMipmapMode::Enabled), s_mipmapping_options, std::size(s_mipmapping_options), true);
 		DrawIntListSetting(bsi, FSUI_CSTR("Bilinear Filtering"),
 			FSUI_CSTR("Selects where bilinear filtering is utilized when rendering textures."), "EmuCore/GS", "filter",
@@ -3682,8 +3682,6 @@ void FullscreenUI::DrawGraphicsSettingsPage(SettingsInterface* bsi, bool show_ad
 				"Uploads full textures to the GPU on use, rather than only the utilized regions. Can improve performance in some games."),
 			"EmuCore/GS", "texture_preloading", static_cast<int>(TexturePreloadingLevel::Off), s_preloading_options,
 			std::size(s_preloading_options), true);
-		DrawToggleSetting(
-			bsi, FSUI_CSTR("Mipmapping"), FSUI_CSTR("Enables emulation of the GS's texture mipmapping."), "EmuCore/GS", "hw_mipmap", true);
 	}
 	else
 	{
