@@ -2479,19 +2479,19 @@ void GSRendererHW::Draw()
 				MIP_CLAMP.MAXU >>= m_lod.x;
 				MIP_CLAMP.MAXV >>= m_lod.x;
 
-				for (int i = 0; i < m_lod.x; i++)
+								for (int i = 0; i < m_lod.x; i++)
 				{
 					m_vt.m_min.t *= 0.5f;
 					m_vt.m_max.t *= 0.5f;
 				}
 			}
 			else
-				{
-					hash_lod_range = GSVector2i(0, mxl);
-					TEX0 = m_cached_ctx.TEX0;
-				}
+			{
+				m_vt.m_min.t *= 0.5f;
+				m_vt.m_max.t *= 0.5f;
+				hash_lod_range = GSVector2i(0, mxl);
+				TEX0 = m_cached_ctx.TEX0;
 			}
-			else
 
 			GL_CACHE("Mipmap LOD %d %d (%f %f) new size %dx%d (K %d L %u)", m_lod.x, m_lod.y, m_vt.m_lod.x, m_vt.m_lod.y,
 				(1 << m_cached_ctx.TEX0.TW) >> m_lod.x, (1 << m_cached_ctx.TEX0.TH) >> m_lod.x, m_context->TEX1.K, m_context->TEX1.L);
