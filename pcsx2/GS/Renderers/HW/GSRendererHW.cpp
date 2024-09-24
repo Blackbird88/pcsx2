@@ -2479,16 +2479,13 @@ void GSRendererHW::Draw()
 				MIP_CLAMP.MAXU >>= m_lod.x;
 				MIP_CLAMP.MAXV >>= m_lod.x;
 
-								for (int i = 0; i < m_lod.x; i++)
-				{
+			for (int i = 0; i < m_lod.x; i++)
+			{
 					m_vt.m_min.t *= 0.5f;
 					m_vt.m_max.t *= 0.5f;
-				}
 			}
 			else
 			{
-				m_vt.m_min.t *= 0.5f;
-				m_vt.m_max.t *= 0.5f;
 				hash_lod_range = GSVector2i(0, mxl);
 				TEX0 = m_cached_ctx.TEX0;
 			}
